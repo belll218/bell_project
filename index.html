@@ -1,10 +1,14 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
 
-{% block title %}
-    index
-{% endblock %}
+<html lang="en">
+    <head>
 
-{% block main %}
+        <meta charset="uft-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet">
+        <title>Stress Food</title>
+
+    </head>
 
     <h1>Hello! How are you feeling today? </h1>
     <form action="/mood" method="POST">
@@ -37,4 +41,4 @@
 
     </form>
 
-{% endblock %}
+</html>
