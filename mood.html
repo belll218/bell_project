@@ -30,7 +30,7 @@
             }
             .food-item.chosen {
                 font-weight: bold;
-                color: DarkSlateBlue;
+                background-color: DarkSlateBlue;
             }
         </style>
     </head>
@@ -45,7 +45,7 @@
                 <div class="food-item">🍣Sushi🍣</div>
                 <div class="food-item">🍰Dessert🍰</div>
                 <div class="food-item">🥩Steak🥩</div>
-                <div class="food-item">🥪Sandwitch🥪</div>
+                <div class="food-item">🥪Sandwich🥪</div>
                 <div class="food-item">🍲Hotpot🍲</div>
                 <div class="food-item">🍝Pasta🍝</div>
                 <div class="food-item">🥗Salad🥗</div>
@@ -57,23 +57,31 @@
             let intensity = localStorage.getItem('intensity');
 
             if (mood && intensity) {
-            mood = parseInt(mood);
-            intensity = parseInt(intensity);
+                mood = parseInt(mood);
+                intensity = parseInt(intensity);
 
-            let value = mood*intensity;
-            let index = value % 10;
+                let value = mood*intensity;
+                let index = value % 10;
 
-            const Fooditems = document.querySelectorAll('.food-item');
-            const FoodList = document.getElementById('Foodlist');
+                console.log("Mood:", mood, "Intensity:", intensity, "Value:", value, "Index:", index);
 
-            Fooditems[index].classList.add('chosen');
+                const Fooditems = document.querySelectorAll('.food-item');
+                const FoodList = document.getElementById('Foodlist');
 
-            setTimeout(() => {
-                FoodList.style.transform = `translateX(-${index * 200}px)`; 
-            }, 100);
+
+                for (let i = 0; i <= 20 + index; i++){
+                    setTimeout(() => {
+                        const position = (i % foodItems.length) * 200;
+                        FoodList.style.transform = `translateX(-${index * 200}px)`; 
+
+                    if (i === 20 + index) {
+                        Fooditems[index].classList.add('chosen');
+                    }
+                },i*stepDelay); 
+            }
         } else {
             alert("Mood or intensity data is missing.");
-            }
+        }
         </script>
-
+</body>
 </html>
