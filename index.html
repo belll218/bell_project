@@ -45,7 +45,11 @@
 
             let mood = document.getElementById('mood').value;
             let intensity = document.getElementById('intensity').value;
-            window.location.href = `mood.html?mood=${mood}&intensity=${intensity}`;
+
+            localStorage.setItem('mood', mood);
+            localStorage.setItem('intensity', intensity);
+
+            window.location.href = 'mood.html';
         });
     </script>
 
