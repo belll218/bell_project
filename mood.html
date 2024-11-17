@@ -64,12 +64,12 @@
             let index = value % 10;
 
             const Fooditems = document.querySelectorAll('.food-item');
-            const FoodList = document.getElementbyId('Foodlist');
+            const FoodList = document.getElementById('Foodlist');
 
             Fooditems[index].classList.add('chosen');
 
             setTimeout(() => {
-                Foodlist.style.transform = `translateX(-${index * 200}px)`; 
+                FoodList.style.transform = `translateX(-${index * 200}px)`; 
             }, 100);
         } else {
             alert("Mood or intensity data is missing.");
