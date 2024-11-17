@@ -1,13 +1,10 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
-    <head>
+{% block title %}
+    index
+{% endblock %}
 
-        <meta charset="uft-7">
-        <meta name="viewport"git add . content="width=device-width, initial-scale=1.0">
-        <link href="styles.css" rel="stylesheet">
-        <title>Stress Food</title>
-
+{% block main %}
     </head>
 
     <h1>Hello! How are you feeling today? </h1>
@@ -15,30 +12,30 @@
         <label for="mood">Select how you're feeling</label>
         <select name="mood">
             <!-- happy -->
-            <option value="10">#1F60A</option> 
+            <option value="10">&#x1F60A;</option> 
             <!-- cool -->
-            <option value="8">#1F60E</option>
+            <option value="8">&#x1F60E;</option>
             <!-- love -->
-            <option value="9">#1F60D</option>
+            <option value="9">&#x1F60D;</option>
             <!-- neutral -->
-            <option value="1">#1F610</option>
+            <option value="1">&#x1F610;</option>
             <!-- sweat -->
-            <option value="-6">#1F613</option>
+            <option value="-6">&#x1F613;</option>
             <!-- bad -->
-            <option value="-5">#1F614</option>
+            <option value="-5">&#x1F614;</option>
             <!-- frown -->
-            <option value="-2">#1F615</option>
+            <option value="-2">&#x1F615;</option>
             <!-- angry -->
-            <option value="-4">#1F620</option>
+            <option value="-4">&#x1F620;</option>
             <!-- cry -->
-            <option value="-7">#1F622</option>
+            <option value="-7">&#x1F622;</option>
             <!-- asleep -->
-            <option value="0.001">#1F634</option>
+            <option value="0.001">&#x1F634;</option>
         </select>
         <input name="extent" placeholder="How much?" type="number" min="1" max="10">
 
-        <button type="submit"></button>
+        <button type="submit">submit</button>
 
     </form>
 
-</html>
+{% endblock %}
