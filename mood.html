@@ -74,7 +74,7 @@
                 for (let i = 0; i <= 20 + index; i++){
                     setTimeout(() => {
                         const position = (i % Fooditems.length) * 200;
-                        FoodList.style.transform = `translateX(-${position}px)`; 
+                        FoodList.style.transform = `translateY(-${position}px)`; 
 
                     if (i === 20 + index) {
                         Fooditems[index].classList.add('chosen');
