@@ -8,14 +8,61 @@
         <link href="styles.css" rel="stylesheet">
         <title>Stress Food</title>
 
+        <style>
+            .food {
+                display: flex;
+                align-items: center;
+                height: 200px;
+                overflow: hidden;
+                border: 2px solid#000;
+                margin: 20px auto;
+                width: 80%;
+            }
+        </style>
     </head>
 
     <body>
+        <h1>Your customized food choice is:</h1>
+        <div class="food-container">
+            <div class="food-list" id="foodList">
+                <div class="food-item">🍸Drink🍸</div>
+                <div class="food-item">🍜Ramen🍜</div>
+                <div class="food-item">🍨Binsu🍨</div>
+                <div class="food-item">🍣Sushi🍣</div>
+                <div class="food-item">🍰Dessert🍰</div>
+                <div class="food-item">🥩Steak🥩</div>
+                <div class="food-item">🥪Sandwitch🥪</div>
+                <div class="food-item">🍲Hotpot🍲</div>
+                <div class="food-item">🍝Pasta🍝</div>
+                <div class="food-item">🥗Salad🥗</div>
+            </div>
+        </div>
 
-        
         <script>
             let mood = localStorage.getItem('mood');
             let intensity = localStorage.getItem('intensity');
+
+            if (mood && intensity) {
+            mood = parseInt(mood);
+            intensity = parseInt(intensity);
+
+            value = mood*intensity;
+
+            const foodOptions = [
+                'Drink',      // Index 0
+                'Ramen',     // 1
+                'Binsu',      // 2 binsu
+                'Sushi',      // 3
+                'Dessert',      // 4
+                'Steak',  // 5
+                'Sandwitch',      // 6
+                'Hotpot',      // 7
+                'Pasta',      // 8
+                'Salad'      // 9
+            ];
+            const foodList = document.getElementById('foodList');
+
+            }
         </script>
 
 </html>
