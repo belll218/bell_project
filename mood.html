@@ -63,21 +63,19 @@
                 let value = mood*intensity;
                 let index = value % 10;
 
-                console.log("Mood:", mood, "Intensity:", intensity, "Value:", value, "Index:", index);
-
                 const Fooditems = document.querySelectorAll('.food-item');
                 const FoodList = document.getElementById('Foodlist');
 
 
                 for (let i = 0; i <= 20 + index; i++){
                     setTimeout(() => {
-                        const position = (i % foodItems.length) * 200;
+                        const position = (i % Fooditems.length) * 200;
                         FoodList.style.transform = `translateX(-${index * 200}px)`; 
 
                     if (i === 20 + index) {
                         Fooditems[index].classList.add('chosen');
                     }
-                },i*stepDelay); 
+                },i * stepDelay); 
             }
         } else {
             alert("Mood or intensity data is missing.");
