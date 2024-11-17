@@ -10,47 +10,48 @@
 
     </head>
 
-    <h1>Hello! How are you feeling today? </h1>
-    <form id="form" action="/mood" >
-        <label for="mood">Select how you're feeling</label>
-        <select name="mood">
-            <!-- happy -->
-            <option value="10">&#x1F60A;</option> 
-            <!-- love -->
-            <option value="9">&#x1F60D;</option>
-            <!-- cool -->
-            <option value="8">&#x1F60E;</option>
-            <!-- neutral -->
-            <option value="7">&#x1F610;</option>
-            <!-- sweat -->
-            <option value="5">&#x1F614;</option>
-            <!-- frown -->
-            <option value="4">&#x1F613;</option>
-            <!-- bad -->
-            <option value="3">&#x1F615;</option>
-            <!-- angry -->
-            <option value="2">&#x1F620;</option>
-            <!-- cry -->
-            <option value="1">&#x1F622;</option>
-            <!-- asleep -->
-            <option value="6">&#x1F634;</option>
-        </select>
-        <input name="extent" placeholder="How much?" type="number" min="1" max="10">
-        <button type="submit">Submit</button>
-    </form>
+    <body>
+        <h1>Hello! How are you feeling today? </h1>
+        <form id="form" action="/mood" >
+            <label for="mood">Select how you're feeling</label>
+            <select name="mood" id="mood">
+                <!-- happy -->
+                <option value="10">&#x1F60A;</option> 
+                <!-- love -->
+                <option value="9">&#x1F60D;</option>
+                <!-- cool -->
+                <option value="8">&#x1F60E;</option>
+                <!-- neutral -->
+                <option value="7">&#x1F610;</option>
+                <!-- sweat -->
+                <option value="5">&#x1F614;</option>
+                <!-- frown -->
+                <option value="4">&#x1F613;</option>
+                <!-- bad -->
+                <option value="3">&#x1F615;</option>
+                <!-- angry -->
+                <option value="2">&#x1F620;</option>
+                <!-- cry -->
+                <option value="1">&#x1F622;</option>
+                <!-- asleep -->
+                <option value="6">&#x1F634;</option>
+            </select>
+            <input name="extent" id="intensity" placeholder="How much?" type="number" min="1" max="10">
+            <button type="submit">Submit</button>
+        </form>
 
-    <script>
-        document.getElementById('form').addEventListener('submit', function(e) {
-            e.preventDefault();
+        <script>
+            document.getElementById('form').addEventListener('submit', function(e) {
+                e.preventDefault();
 
-            let mood = document.getElementById('mood').value;
-            let intensity = document.getElementById('intensity').value;
+                let mood = document.getElementById('mood').value;
+                let intensity = document.getElementById('intensity').value;
 
-            localStorage.setItem('mood', mood);
-            localStorage.setItem('intensity', intensity);
+                localStorage.setItem('mood', mood);
+                localStorage.setItem('intensity', intensity);
 
-            window.location.href = 'mood.html';
-        });
-    </script>
-
+                window.location.href = 'mood.html';
+            });
+        </script>
+    </body>
 </html>
