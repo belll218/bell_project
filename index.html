@@ -11,22 +11,22 @@
     </head>
 
     <h1>Hello! How are you feeling today? </h1>
-    <form action="/mood" method="POST">
+    <form id="form" action="/mood" >
         <label for="mood">Select how you're feeling</label>
         <select name="mood">
             <!-- happy -->
             <option value="10">&#x1F60A;</option> 
-            <!-- cool -->
-            <option value="8">&#x1F60E;</option>
             <!-- love -->
             <option value="9">&#x1F60D;</option>
+            <!-- cool -->
+            <option value="8">&#x1F60E;</option>
             <!-- neutral -->
             <option value="1">&#x1F610;</option>
             <!-- sweat -->
-            <option value="-6">&#x1F613;</option>
-            <!-- bad -->
             <option value="-5">&#x1F614;</option>
             <!-- frown -->
+            <option value="-6">&#x1F613;</option>
+            <!-- bad -->
             <option value="-2">&#x1F615;</option>
             <!-- angry -->
             <option value="-4">&#x1F620;</option>
@@ -36,9 +36,17 @@
             <option value="0.001">&#x1F634;</option>
         </select>
         <input name="extent" placeholder="How much?" type="number" min="1" max="10">
-
         <button type="submit">submit</button>
-
     </form>
+
+    <script>
+        document.getElementById('moodForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let mood = document.getElementById('mood').value;
+            let intensity = document.getElementById('intensity').value;
+            window.location.href = `mood.html?mood=${mood}&intensity=${intensity}`;
+        });
+    </script>
 
 </html>
