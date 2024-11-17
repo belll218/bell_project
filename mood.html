@@ -63,19 +63,9 @@
             let value = mood*intensity;
             let index = value % 10;
 
-            const Foodoptions = [
-                'Drink',      // Index 0
-                'Ramen',     // 1
-                'Binsu',      // 2 binsu
-                'Sushi',      // 3
-                'Dessert',      // 4
-                'Steak',  // 5
-                'Sandwitch',      // 6
-                'Hotpot',      // 7
-                'Pasta',      // 8
-                'Salad'      // 9
-            ];
-            let Fooditems = document.querySelectorAll('.food-item');
+            const Fooditems = document.querySelectorAll('.food-item');
+            const FoodList = document.getElementbyId('Foodlist');
+
             Fooditems[index].classList.add('chosen');
 
             setTimeout(() => {
