@@ -18,13 +18,27 @@
                 margin: 20px auto;
                 width: 80%;
             }
+            .food-list {
+                display:flex;
+                transition: transform 1s ease-in-out;
+            }
+            .food-item {
+                font-size: 24px;
+                padding: 20px;
+                width: 200px;
+                text-align: center;
+            }
+            .food-item chosen {
+                font-weight: bold;
+                color: DarkSlateBlue;
+            }
         </style>
     </head>
 
     <body>
         <h1>Your customized food choice is:</h1>
-        <div class="food-container">
-            <div class="food-list" id="foodList">
+        <div class="food">
+            <div class="food-list" id="FoodList">
                 <div class="food-item">🍸Drink🍸</div>
                 <div class="food-item">🍜Ramen🍜</div>
                 <div class="food-item">🍨Binsu🍨</div>
@@ -60,8 +74,14 @@
                 'Pasta',      // 8
                 'Salad'      // 9
             ];
-            const foodList = document.getElementById('foodList');
+            let Fooditems = document.querySelectorAll('.food-item');
+            foodItems[index].classList.add('chosen');
 
+            setTimeout(() => {
+                foodList.style.transform = `translateX(-${index * 200}px)`; 
+            }, 100);
+        } else {
+            alert("Mood or intensity data is missing.");
             }
         </script>
 
