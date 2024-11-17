@@ -60,7 +60,8 @@
             mood = parseInt(mood);
             intensity = parseInt(intensity);
 
-            value = mood*intensity;
+            let value = mood*intensity;
+            let index = value % 10;
 
             const foodOptions = [
                 'Drink',      // Index 0
