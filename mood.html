@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
 
-        <meta charset="uft-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="styles.css" rel="stylesheet">
         <title>Stress Food</title>
@@ -28,7 +28,7 @@
                 width: 200px;
                 text-align: center;
             }
-            .food-item chosen {
+            .food-item.chosen {
                 font-weight: bold;
                 color: DarkSlateBlue;
             }
@@ -38,7 +38,7 @@
     <body>
         <h1>Your customized food choice is:</h1>
         <div class="food">
-            <div class="food-list" id="FoodList">
+            <div class="food-list" id="Foodlist">
                 <div class="food-item">🍸Drink🍸</div>
                 <div class="food-item">🍜Ramen🍜</div>
                 <div class="food-item">🍨Binsu🍨</div>
@@ -63,7 +63,7 @@
             let value = mood*intensity;
             let index = value % 10;
 
-            const foodOptions = [
+            const Foodoptions = [
                 'Drink',      // Index 0
                 'Ramen',     // 1
                 'Binsu',      // 2 binsu
@@ -76,10 +76,10 @@
                 'Salad'      // 9
             ];
             let Fooditems = document.querySelectorAll('.food-item');
-            foodItems[index].classList.add('chosen');
+            Fooditems[index].classList.add('chosen');
 
             setTimeout(() => {
-                foodList.style.transform = `translateX(-${index * 200}px)`; 
+                Foodlist.style.transform = `translateX(-${index * 200}px)`; 
             }, 100);
         } else {
             alert("Mood or intensity data is missing.");
