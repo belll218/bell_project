@@ -21,7 +21,7 @@
             }
             .food-list {
                 display:flex;
-                transition: transform 0.2s ease-in-out;
+                transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
                 flex-direction: column;
             }
             .food-item {
@@ -36,6 +36,7 @@
                 background-color: DarkSlateBlue;
                 color: white;
                 border: 2px solid white;
+                animation: pulse 1s infinite;
             }
         </style>
     </head>
@@ -72,7 +73,7 @@
                 const FoodList = document.getElementById('Foodlist');
 
 
-                for (let i = 0; i <= 50 + index; i++){
+                for (let i = 0; i <= 10 + index; i++){
                     setTimeout(() => {
                         const position = (i % Fooditems.length) * 200;
                         FoodList.style.transform = `translateY(-${position}px)`;
