@@ -130,7 +130,7 @@
 
                 for (let i = 0; i <= index; i++){
                     setTimeout(() => {
-                        const position = (i % Fooditems.length) * height;
+                        const position = (i % 60) * height;
                         FoodList.style.transform = `translateY(-${position}px)`;
                     }, i * 50) 
                 }
