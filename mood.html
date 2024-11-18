@@ -18,6 +18,7 @@
                 margin: 20px auto;
                 width: 80%;
                 justify-content: center; 
+                position: relative;
             }
             .food-list {
                 display:flex;
@@ -87,6 +88,7 @@
                 setTimeout(() => {
                     Fooditems.forEach(item => item.classList.remove('chosen'));
                     Fooditems[index].classList.add('chosen');
+                    FoodList.style.transform = `translateY(-${index * height}px)`;
                 }, (50 + index) * 50);
             } else {
             alert("Mood or intensity data is missing.");

@@ -11,15 +11,15 @@
 
     <body>
         <script>
-    const index = localStorage.getItem('index'); // Retrieve the index value
-    if (index !== null) {
-        const Fooditems = ['Drink', 'Ramen', 'Binsu', 'Sushi', 'Dessert', 'Steak', 'Sandwich', 'Hotpot', 'Pasta', 'Salad'];
-        const selectedFood = Fooditems[parseInt(index)];
+            const index = localStorage.getItem('index'); 
+            if (index !== null) {
+                const Fooditems = ['Drink', 'Ramen', 'Binsu', 'Sushi', 'Dessert', 'Steak', 'Sandwich', 'Hotpot', 'Pasta', 'Salad'];
+                const selectedFood = Fooditems[parseInt(index)];
 
-        document.getElementById('foodChoice').textContent = `${selectedFood}`;
-    } else {
-        document.getElementById('foodChoice').textContent = 'No food choice available.';
-    }
+                document.getElementById('foodChoice').textContent = `${selectedFood}`;
+            } else {
+                document.getElementById('foodChoice').textContent = 'No food choice available.';
+            }
         </script>
     </body>
 </html>
