@@ -125,12 +125,17 @@
 
                 let value = mood*intensity;
                 index = value % 60;
+                console.log("Expected index:", index);
+                console.log("Number of food items:", document.querySelectorAll('.food-item').length);
 
                 const Fooditems = document.querySelectorAll('.food-item');
                 const FoodList = document.getElementById('Foodlist');
                 const height = Fooditems[1].offsetHeight;
+                console.log("Height of each food item:", height);
+                console.log("Total number of items:", Fooditems.length);
+                console.log("Container height:", containerHeight);
+                console.log("Final calculated offset:", offset);
                 
-                console.log("Calculated height of food items:", height);
 
                 for (let i = 0; i <= index; i++){
                     setTimeout(() => {
