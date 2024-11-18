@@ -33,7 +33,6 @@
                 width: 200px;
                 text-align: center;
                 flex-direction: column;
-                font-size: 16px;
                 line-height: 100px;
             }
             .food-item.chosen {
@@ -125,19 +124,14 @@
                 mood = parseInt(mood);
                 intensity = parseInt(intensity);
 
-                let value = mood*intensity;
+                let value = mood * intensity;
                 index = value % 60;
 
                 const Fooditems = document.querySelectorAll('.food-item');
                 const FoodList = document.getElementById('Foodlist');
                 const height = Fooditems[1].offsetHeight;
-
-                const offset = index * height;
-                console.log("Index:", index);
-                console.log("Height per item:", height);
-                console.log("Calculated offset:", offset);
                 
-                console.log("Calculated height of food items:", height);
+                FoodList.style.transform = `translateY(-${index * height}px)`;
 
                 for (let i = 0; i <= index; i++){
                     setTimeout(() => {
@@ -151,36 +145,8 @@
                     Fooditems[index].classList.add('chosen');
                     FoodList.style.transform = `translateY(-${index * height}px)`;
 
-                    Fooditems.forEach((item, idx) => {
-                    console.log(`Item ${idx} position: ${item.getBoundingClientRect().top}`);
-                });
-                
-                    const position = index * height;
-                    console.log("Expected transform position:", position);
-                    console.log("Final transform style:", FoodList.style.transform);
-                    const selected = Fooditems[index];
-                    console.log("Index being highlighted:", index);
-                    console.log("Selected item content:", selected?.textContent);
-                    console.log("All items:", Fooditems);
-
-                    Fooditems.forEach((item, idx) => {
-                        if (idx === index) {
-                            console.log("Highlighting item:", item.textContent);
-                        }
-                        });
                     let selectedItem = document.querySelector('.food-item.chosen');
 
-                    // Debugging: Log the result of querySelector
-                    console.log("Selected item:", selectedItem);
-                    Fooditems.forEach((item, idx) => {
-                        console.log(`Item ${idx} offsetHeight:`, item.offsetHeight);
-                    });
-
-                    if (selectedItem) {
-                        console.log("Selected item content:", selectedItem.textContent); // Verify its content
-                    } else {
-                        console.error("Error: No element with the class 'chosen' found."); // Log error if null
-                    }
                 }, (index + 1) * 50 + 500);
             } else {
             alert("Mood or intensity data is missing.");
