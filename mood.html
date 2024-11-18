@@ -77,17 +77,17 @@
                 const height = Fooditems[0].offsetHeight;
 
 
-                for (let i = 0; i <= 10 + index; i++){
+                for (let i = 0; i <= 50 + index; i++){
                     setTimeout(() => {
                         const position = (i % Fooditems.length) * height;
                         FoodList.style.transform = `translateY(-${position}px)`;
-                    }, i * 20) 
+                    }, i * 50) 
                 }
 
                 setTimeout(() => {
                     Fooditems.forEach(item => item.classList.remove('chosen'));
                     Fooditems[index].classList.add('chosen');
-                }, (10 + index) * 20);
+                }, (50 + index) * 50);
             } else {
             alert("Mood or intensity data is missing.");
             }
