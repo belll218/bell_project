@@ -127,6 +127,8 @@
                 index = value % 60;
                 console.log("Expected index:", index);
                 console.log("Number of food items:", document.querySelectorAll('.food-item').length);
+                console.log("Selected item:", selectedItem);
+                console.log("Selected item content:", selectedItem?.textContent);
 
                 const Fooditems = document.querySelectorAll('.food-item');
                 const FoodList = document.getElementById('Foodlist');
@@ -135,7 +137,7 @@
                 const containerHeight = document.querySelector('.food').offsetHeight;
 
                 // Calculate the offset needed to align the item
-                const offset = index * height - (containerHeight - height) / 2;
+                const offset = index * height;
 
                 console.log("Height of each food item:", height);
                 console.log("Total number of items:", Fooditems.length);
@@ -160,7 +162,9 @@
                     console.log("Final transform style:", FoodList.style.transform);
 
                     let selectedItem = document.querySelector('.food-item.chosen');
-
+                    Fooditems.forEach((item, idx) => {
+                    console.log(`Item ${idx} position: ${item.getBoundingClientRect().top}`);
+                });
                     // Debugging: Log the result of querySelector
                     console.log("Selected item:", selectedItem);
 
