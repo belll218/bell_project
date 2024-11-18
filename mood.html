@@ -22,7 +22,7 @@
             }
             .food-list {
                 display:flex;
-                transition: transform 0.1s ease-in-out;
+                transition: transform 0.5s ease-in-out;
                 flex-direction: column;
             }
             .food-item {
@@ -39,7 +39,7 @@
                 background-color: DarkSlateBlue;
                 color: white;
                 border: 2px solid white;
-                animation: pulse 1s infinite;
+                animation: pulse 1s ease-in-out;
             }
         </style>
     </head>
@@ -124,7 +124,7 @@
                 intensity = parseInt(intensity);
 
                 let value = mood*intensity;
-                let index = value % 60;
+                index = value % 60;
 
                 const Fooditems = document.querySelectorAll('.food-item');
                 const FoodList = document.getElementById('Foodlist');
@@ -142,7 +142,7 @@
                     Fooditems.forEach(item => item.classList.remove('chosen'));
                     Fooditems[index].classList.add('chosen');
                     FoodList.style.transform = `translateY(-${index * height}px)`;
-                }, (index + 1) * 50);
+                }, (index + 1) * 50 + 500);
             } else {
             alert("Mood or intensity data is missing.");
             }
