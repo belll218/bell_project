@@ -58,7 +58,7 @@
             </div>
         </div>
         <form id="form">
-            <button type="next">Yay!</button>
+            <button type="submit">Yay!</button>
         </form>
 
         <script>
@@ -90,12 +90,13 @@
             } else {
             alert("Mood or intensity data is missing.");
             }
-            document.getElementById('form').addEventListener('next', function(e) {
+            document.getElementById('form').addEventListener('submit', function(e) {
                 e.preventDefault();
 
-                localStorage.setItem('intensity', intensity);
+                localStorage.setItem('index', index);
 
-                window.location.href = 'mood.html';
+                window.location.href = 'result.html';
+            });
         </script>
 </body>
 </html>
