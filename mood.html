@@ -143,7 +143,16 @@
                     Fooditems[index].classList.add('chosen');
                     FoodList.style.transform = `translateY(-${index * height}px)`;
 
-                    console.log(`Chosen item: ${selectedItem.textContent}`);
+                    let selectedItem = document.querySelector('.food-item.chosen');
+
+                    // Debugging: Log the result of querySelector
+                    console.log("Selected item:", selectedItem);
+
+                    if (selectedItem) {
+                        console.log("Selected item content:", selectedItem.textContent); // Verify its content
+                    } else {
+                        console.error("Error: No element with the class 'chosen' found."); // Log error if null
+                    }
                 }, (index + 1) * 50 + 500);
             } else {
             alert("Mood or intensity data is missing.");
