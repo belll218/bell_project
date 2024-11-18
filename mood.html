@@ -129,7 +129,8 @@
                 const Fooditems = document.querySelectorAll('.food-item');
                 const FoodList = document.getElementById('Foodlist');
                 const height = Fooditems[1].offsetHeight;
-
+                
+                console.log("Calculated height of food items:", height);
 
                 for (let i = 0; i <= index; i++){
                     setTimeout(() => {
@@ -142,6 +143,10 @@
                     Fooditems.forEach(item => item.classList.remove('chosen'));
                     Fooditems[index].classList.add('chosen');
                     FoodList.style.transform = `translateY(-${index * height}px)`;
+
+                    const position = index * height;
+                    console.log("Expected transform position:", position);
+                    console.log("Final transform style:", FoodList.style.transform);
 
                     let selectedItem = document.querySelector('.food-item.chosen');
 
