@@ -12,7 +12,7 @@
             .food {
                 display: flex;
                 align-items: center;
-                height: 800px;
+                height: 300px;
                 overflow: hidden;
                 border: 2px solid#000;
                 margin: 20px auto;
@@ -70,18 +70,22 @@
                 mood = parseInt(mood);
                 intensity = parseInt(intensity);
 
-                let value = mood*intensity;
-                let index = value % 10;
+                let index = (mood*intensity) % 10;
 
                 const Fooditems = document.querySelectorAll('.food-item');
                 const FoodList = document.getElementById('Foodlist');
                 const height = Fooditems[0].offsetHeight;
 
+                const clonedFoodList = FoodList.cloneNode(true); 
+                for (i = 0; i < 5; i++){
+                    FoodList.parentNode.appendChild(clonedFoodList);
+                }
 
-                for (let i = 0; i <= 50 + index; i++){
+                for (let i = 0; i <= index; i++){
                     setTimeout(() => {
                         const position = (i % Fooditems.length) * height;
                         FoodList.style.transform = `translateY(-${position}px)`;
+                        clonedFoodList.style.transform = `translateY(-${position}px)`;
                     }, i * 50) 
                 }
 
@@ -89,7 +93,8 @@
                     Fooditems.forEach(item => item.classList.remove('chosen'));
                     Fooditems[index].classList.add('chosen');
                     FoodList.style.transform = `translateY(-${index * height}px)`;
-                }, (50 + index) * 50);
+                    clonedFoodList.style.transform = `translateY(-${index * height}px)`
+                }, (index) * 50);
             } else {
             alert("Mood or intensity data is missing.");
             }
