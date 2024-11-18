@@ -142,6 +142,8 @@
                     Fooditems.forEach(item => item.classList.remove('chosen'));
                     Fooditems[index].classList.add('chosen');
                     FoodList.style.transform = `translateY(-${index * height}px)`;
+
+                    console.log(`Chosen item: ${selectedItem.textContent}`);
                 }, (index + 1) * 50 + 500);
             } else {
             alert("Mood or intensity data is missing.");

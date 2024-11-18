@@ -15,10 +15,10 @@
 
         <script>
             const index = localStorage.getItem('index');
-            index = index % 10; 
+
             if (index !== null) {
                 const Fooditems = ['Drink', 'Ramen', 'Binsu', 'Sushi', 'Dessert', 'Steak', 'Sandwich', 'Hotpot', 'Pasta', 'Salad'];
-                const selectedFood = Fooditems[parseInt(index)];
+                const selectedFood = Fooditems[(parseInt(index)) % Fooditems.length];
 
                 document.getElementById('foodChoice').textContent = `${selectedFood}`;
             } else {
