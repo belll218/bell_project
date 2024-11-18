@@ -57,6 +57,9 @@
                 <div class="food-item">🥗Salad🥗</div>
             </div>
         </div>
+        <form id="form">
+            <button type="next">Yay!</button>
+        </form>
 
         <script>
             let mood = localStorage.getItem('mood');
@@ -75,7 +78,7 @@
 
                 for (let i = 0; i <= 10 + index; i++){
                     setTimeout(() => {
-                        const position = (i % Fooditems.length) * 200;
+                        const position = (i % Fooditems.length) * Fooditems[0].offsetHeight;
                         FoodList.style.transform = `translateY(-${position}px)`;
                     }, i * 50) 
                 }
@@ -87,6 +90,12 @@
             } else {
             alert("Mood or intensity data is missing.");
             }
+            document.getElementById('form').addEventListener('next', function(e) {
+                e.preventDefault();
+
+                localStorage.setItem('intensity', intensity);
+
+                window.location.href = 'mood.html';
         </script>
 </body>
 </html>
