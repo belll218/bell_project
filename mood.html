@@ -131,6 +131,12 @@
                 const Fooditems = document.querySelectorAll('.food-item');
                 const FoodList = document.getElementById('Foodlist');
                 const height = Fooditems[1].offsetHeight;
+
+                const containerHeight = document.querySelector('.food').offsetHeight;
+
+                // Calculate the offset needed to align the item
+                const offset = index * height - (containerHeight - height) / 2;
+
                 console.log("Height of each food item:", height);
                 console.log("Total number of items:", Fooditems.length);
                 console.log("Container height:", containerHeight);
