@@ -27,7 +27,9 @@
             }
             .food-item {
                 font-size: 24px;
-                padding: 20px;
+                height: 100px;
+                padding: 0;
+                margin: 0;
                 width: 200px;
                 text-align: center;
                 flex-direction: column;
@@ -131,7 +133,7 @@
 
                 for (let i = 0; i <= index; i++){
                     setTimeout(() => {
-                        const position = (i % 60) * height;
+                        const position = i * height;
                         FoodList.style.transform = `translateY(-${position}px)`;
                     }, i * 50) 
                 }
