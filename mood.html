@@ -11,7 +11,7 @@
         <style>
             .food {
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 height: 300px;
                 overflow: hidden;
                 border: 2px solid#000;
@@ -24,6 +24,7 @@
                 display:flex;
                 transition: transform 0.1s ease-in-out;
                 flex-direction: column;
+                position: absolute;
             }
             .food-item {
                 font-size: 24px;
@@ -31,6 +32,7 @@
                 width: 200px;
                 text-align: center;
                 flex-direction: column;
+                box-sizing: border-box;
             }
             .food-item.chosen {
                 font-weight: bold;
@@ -76,14 +78,15 @@
                 const FoodList = document.getElementById('Foodlist');
                 const height = Fooditems[0].offsetHeight;
 
+                const parent = FoodList.parentNode;  
                 const clonedFoodList = FoodList.cloneNode(true); 
-                for (i = 0; i < 5; i++){
-                    FoodList.parentNode.appendChild(clonedFoodList);
+                for (let i = 0; i < 5; i++) {  
+                    parent.appendChild(clonedFoodList);
                 }
 
-                for (let i = 0; i <= index; i++){
+                for (let i = 0; i <= index + 5; i++){
                     setTimeout(() => {
-                        const position = (i % Fooditems.length) * height;
+                        const position = (i % (Fooditems.length * 6)) * height;
                         FoodList.style.transform = `translateY(-${position}px)`;
                         clonedFoodList.style.transform = `translateY(-${position}px)`;
                     }, i * 50) 
@@ -94,7 +97,7 @@
                     Fooditems[index].classList.add('chosen');
                     FoodList.style.transform = `translateY(-${index * height}px)`;
                     clonedFoodList.style.transform = `translateY(-${index * height}px)`
-                }, (index) * 50);
+                }, (index + 5) * 50);
             } else {
             alert("Mood or intensity data is missing.");
             }
