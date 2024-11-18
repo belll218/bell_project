@@ -33,6 +33,8 @@
                 width: 200px;
                 text-align: center;
                 flex-direction: column;
+                font-size: 16px;
+                line-height: 100px;
             }
             .food-item.chosen {
                 font-weight: bold;
@@ -158,7 +160,7 @@
                     console.log("Final transform style:", FoodList.style.transform);
                     const selected = Fooditems[index];
                     console.log("Index being highlighted:", index);
-                    console.log("Selected item content:", selectedItem?.textContent);
+                    console.log("Selected item content:", selected?.textContent);
                     console.log("All items:", Fooditems);
 
                     Fooditems.forEach((item, idx) => {
@@ -170,6 +172,9 @@
 
                     // Debugging: Log the result of querySelector
                     console.log("Selected item:", selectedItem);
+                    Fooditems.forEach((item, idx) => {
+                        console.log(`Item ${idx} offsetHeight:`, item.offsetHeight);
+                    });
 
                     if (selectedItem) {
                         console.log("Selected item content:", selectedItem.textContent); // Verify its content
