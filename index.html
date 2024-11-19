@@ -11,6 +11,7 @@
         <style>
             body {
                 text-align: center;
+                margin-top: 80px;
             }
             .button {
                 color: olivedrab;
@@ -19,7 +20,7 @@
                 transition-duration: 0.4s;
                 padding: 15px 30px;
             }
-            .button.hover {
+            .button:hover {
                 border: 2px solid olivedrab;
                 color: darkseagreen;
             }
@@ -32,7 +33,7 @@
             <a href="mood.html" title="Progress">🦊</a>
             <a href="result.html" title="Result">🥥</a>
         </nav>
-        <h1><i>Hello! How are you feeling today?</i></h1>
+        <h1>Hello! How are you feeling today?</h1>
         <form id="form" action="/mood" >
             <h3 for="mood">Select how you're feeling</h3>
             <select name="mood" id="mood">
