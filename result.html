@@ -10,7 +10,7 @@
     </head>
 
     <body>
-        <nav class="narbar">
+        <nav class="navbar">
             <a href="index.html" title="Home">🏡</a>
             <a href="mood.html" title="Progress">🦊</a>
             <a href="result.html" title="Result">🥥</a>
@@ -25,7 +25,7 @@
 
             if (index !== null) {
                 const Fooditems = ['🍸Drink🍸', '🍜Ramen🍜', '🍨Binsu🍨', '🍣Sushi🍣', '🍰Dessert🍰', '🥩Steak🥩', '🥪Sandwich🥪', '🍲Hotpot🍲', '🍝Pasta🍝', '🥗Salad🥗'];
-                const selectedFood = Fooditems[(parseInt(index)) % Fooditems.length];
+                const food = Fooditems[(parseInt(index)) % Fooditems.length];
 
                 const items = [
                     {name: "drink", image: "wine.svg"},
@@ -33,13 +33,17 @@
                     {name: "binsu", image: "shaved-ice.svg"},
                     {name: "sushi", image: "sushi.svg"},
                     {name: 'dessert', image: "birthday.svg"},
-                    {name: "steak", image: "steak.svg"}
+                    {name: "steak", image: "steak.svg"},
+                    {name: "sandwich", image: "sandwich.svg"},
+                    {name: "hotpot", image: "pot.png"},
+                    {name: 'pasta', image: "spaghetti.svg"},
+                    {name: "salad", image: "salad.svg"}
                 ]
                 const resultImageElement = document.getElementById('image');
-                const picture = items[index];
+                const picture = items[parseInt(index) % items.length];  
                 resultImageElement.src = picture.image; 
 
-                document.getElementById('foodChoice').textContent = `${selectedFood}`;
+                document.getElementById('foodChoice').textContent = `${food}`;
             } 
         </script>
     </body>
