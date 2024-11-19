@@ -25,6 +25,10 @@ body {
     background-color: seashell;
 }
 
+.button {
+    cursor: pointer;
+}
+
 #image {
     max-width: 500px;
     max-height: 500px;
