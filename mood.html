@@ -154,13 +154,8 @@
                 mood = parseInt(mood);
                 intensity = parseInt(intensity);
 
-                localStorage.removeItem('index'); 
                 let value = mood * intensity;
                 index = value % 60;
-
-                const Fooditems = document.querySelectorAll('.food-item');
-                const FoodList = document.getElementById('Foodlist');
-                const height = Fooditems[1].offsetHeight;
                 
                 FoodList.scrollTop = 0;
                 FoodList.style.transform = ' ';
@@ -174,14 +169,14 @@
                 setTimeout(() => {
                     for (let i = 0; i <= index; i++){
                         setTimeout(() => {
-                            const position = i * height;
+                            const position = i * 100;
                             FoodList.style.transform = `translateY(-${position}px)`;
                         }, i * 50); 
                     }
 
                     setTimeout(() => {
                         Fooditems.forEach(item => item.classList.remove('chosen'));
-                        Fooditems[index + 30].classList.add('chosen');
+                        Fooditems[index].classList.add('chosen');
                         FoodList.style.transform = `translateY(-${index * height}px)`;
                     }, (index + 1) * 50 + 500);
                 }, 50);
