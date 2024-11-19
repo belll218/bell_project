@@ -151,8 +151,6 @@
 
                 setTimeout(() => {
                     requestAnimationFrame(() => {
-                        FoodList.style.transition = '';
-                        FoodList.style.transform = `translateY(0px)`;
                         for (let i = 0; i <= index; i++){
                             setTimeout(() => {
                                 const position = (i + 1) * height;
@@ -168,9 +166,8 @@
                     }, 50);
                 });
                 console.log(FoodList.scrollTop, FoodList.style.transform);
-            } else {
-            alert("Mood or intensity data is missing.");
-            }
+            } 
+            
             document.getElementById('form').addEventListener('submit', function(e) {
                 e.preventDefault();
 
