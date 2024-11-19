@@ -10,20 +10,25 @@
     </head>
 
     <body>
+        <nav class="narbar">
+            <a href="index.html" title="Home">🏡</a>
+            <a href="mood.html" title="Progress">🦊</a>
+            <a href="result.html" title="Result">🥥</a>
+        </nav>
+        <h1>You will be enjoying ... </h1>
 
         <div id="foodChoice"></div>
+        <div id="image"></div>
 
         <script>
             const index = localStorage.getItem('index');
 
             if (index !== null) {
-                const Fooditems = ['Drink', 'Ramen', 'Binsu', 'Sushi', 'Dessert', 'Steak', 'Sandwich', 'Hotpot', 'Pasta', 'Salad'];
+                const Fooditems = ['🍸Drink🍸', '🍜Ramen🍜', '🍨Binsu🍨', '🍣Sushi🍣', '🍰Dessert🍰', '🥩Steak🥩', '🥪Sandwich🥪', '🍲Hotpot🍲', '🍝Pasta🍝', '🥗Salad🥗'];
                 const selectedFood = Fooditems[(parseInt(index)) % Fooditems.length];
 
                 document.getElementById('foodChoice').textContent = `${selectedFood}`;
-            } else {
-                document.getElementById('foodChoice').textContent = 'No food choice available.';
-            }
+            } 
         </script>
     </body>
 </html>
