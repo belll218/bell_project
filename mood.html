@@ -176,8 +176,10 @@
                 FoodList.style.transform = 'translateY(0px)';
                 FoodList.style.transition = 'none'; 
 
-                requestAnimationFrame(() => {
-                    setTimeout(() => {
+                setTimeout(() => {
+                    requestAnimationFrame(() => {
+                        FoodList.style.transition = '';
+                        FoodList.style.transform = `translateY(0px)`;
                         for (let i = 0; i <= index; i++){
                             setTimeout(() => {
                                 const position = i * height;
