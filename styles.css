@@ -7,12 +7,12 @@
     border-bottom: 1px solide #ccc;
     padding: 8px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     z-index: 1000;
 }
 .navbar a {
-    font-size: 50px;
+    font-size: 20px;
     transition: transform 0.2s;
 }
 

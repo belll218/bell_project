@@ -40,7 +40,7 @@
                     {name: "salad", image: "salad.svg"}
                 ]
                 const resultImageElement = document.getElementById('image');
-                const picture = items[parseInt(index) % items.length];  
+                const picture = items[parseInt(index) % 10];  
                 resultImageElement.src = picture.image; 
 
                 document.getElementById('foodChoice').textContent = `${food}`;
