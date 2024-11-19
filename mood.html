@@ -132,8 +132,14 @@
                 const FoodList = document.getElementById('Foodlist');
                 const height = Fooditems[1].offsetHeight;
                 
-                FoodList.style.transform = 'translateY(0px)';
+                FoodList.scrollTop = 0;
+                FoodList.style.transform = ' ';
                 FoodList.style.transition = 'none'; 
+
+                requestAnimationFrame(() => {
+                    FoodList.style.transform = 'translateY(0px)';
+                    FoodList.style.transition = 'none';
+                });
 
                 setTimeout(() => {
                     for (let i = 0; i <= index; i++){
