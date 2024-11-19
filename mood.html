@@ -109,36 +109,6 @@
                 <div class="food-item">🍲Hotpot🍲</div>
                 <div class="food-item">🍝Pasta🍝</div>
                 <div class="food-item">🥗Salad🥗</div>
-                <div class="food-item">🍸Drink🍸 7</div>
-                <div class="food-item">🍜Ramen🍜</div>
-                <div class="food-item">🍨Binsu🍨</div>
-                <div class="food-item">🍣Sushi🍣</div>
-                <div class="food-item">🍰Dessert🍰</div>
-                <div class="food-item">🥩Steak🥩</div>
-                <div class="food-item">🥪Sandwich🥪</div>
-                <div class="food-item">🍲Hotpot🍲</div>
-                <div class="food-item">🍝Pasta🍝</div>
-                <div class="food-item">🥗Salad🥗</div>
-                <div class="food-item">🍸Drink🍸 8</div>
-                <div class="food-item">🍜Ramen🍜</div>
-                <div class="food-item">🍨Binsu🍨</div>
-                <div class="food-item">🍣Sushi🍣</div>
-                <div class="food-item">🍰Dessert🍰</div>
-                <div class="food-item">🥩Steak🥩</div>
-                <div class="food-item">🥪Sandwich🥪</div>
-                <div class="food-item">🍲Hotpot🍲</div>
-                <div class="food-item">🍝Pasta🍝</div>
-                <div class="food-item">🥗Salad🥗</div>
-                <div class="food-item">🍸Drink🍸 9</div>
-                <div class="food-item">🍜Ramen🍜</div>
-                <div class="food-item">🍨Binsu🍨</div>
-                <div class="food-item">🍣Sushi🍣</div>
-                <div class="food-item">🍰Dessert🍰</div>
-                <div class="food-item">🥩Steak🥩</div>
-                <div class="food-item">🥪Sandwich🥪</div>
-                <div class="food-item">🍲Hotpot🍲</div>
-                <div class="food-item">🍝Pasta🍝</div>
-                <div class="food-item">🥗Salad🥗</div>
             </div>
         </div>
         <form id="form">
@@ -154,8 +124,13 @@
                 mood = parseInt(mood);
                 intensity = parseInt(intensity);
 
+                localStorage.removeItem('index'); 
                 let value = mood * intensity;
                 index = value % 60;
+
+                const Fooditems = document.querySelectorAll('.food-item');
+                const FoodList = document.getElementById('Foodlist');
+                const height = Fooditems[1].offsetHeight;
                 
                 FoodList.scrollTop = 0;
                 FoodList.style.transform = ' ';
@@ -169,7 +144,7 @@
                 setTimeout(() => {
                     for (let i = 0; i <= index; i++){
                         setTimeout(() => {
-                            const position = i * 100;
+                            const position = i * height;
                             FoodList.style.transform = `translateY(-${position}px)`;
                         }, i * 50); 
                     }
