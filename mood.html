@@ -191,7 +191,7 @@
 
                     setTimeout(() => {
                         Fooditems.forEach(item => item.classList.remove('chosen'));
-                        Fooditems[index + 30].classList.add('chosen');
+                        Fooditems[index].classList.add('chosen');
                         FoodList.style.transform = `translateY(-${index * height}px)`;
                     }, (index + 1) * 50 + 500);
                 }, 50);
