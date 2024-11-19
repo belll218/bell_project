@@ -29,10 +29,14 @@
 
                 const items = [
                     {name: "drink", image: "wine.svg"},
-                    {name: "ramen", image: "steaming-bowl (1).svg"}
+                    {name: "ramen", image: "steaming-bowl (1).svg"},
+                    {name: "binsu", image: "shaved-ice.svg"},
+                    {name: "sushi", image: "sushi.svg"},
+                    {name: 'dessert', image: "birthday.svg"},
+                    {name: "steak", image: "steak.svg"}
                 ]
                 const resultImageElement = document.getElementById('image');
-                const picture = item[index];
+                const picture = items[index];
                 resultImageElement.src = picture.image; 
 
                 document.getElementById('foodChoice').textContent = `${selectedFood}`;
